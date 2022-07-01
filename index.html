@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbri arvamise mäng</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="instructions.html"><button class="submit-btn ins-btn">Juhised</button></a>
+        <div class="alerts">
+            <div class="alert1">Sisestasid õige taseme numbri</div>
+            <div class="alert2">Palun täida väljad</div>
+            <div class="alert3">Sisestasid vale taseme numbri või numbri, mis ei kuulu õigesse<br>vahemiku (20-99). Palun proovi uuesti</div>
+        </div>
+        <div class="gaming-board">
+            <h1 class="exp">Selles mängus tuleb suvaline number ära arvata</h1>
+            <form action="#">
+                <div class="first-input">
+                    <div class="options">
+                        <label for="level">Vali tase:</label>
+                        <select id="option" >
+                            <option value=""></option>
+                            <option value="level 1">Tase 1</option>
+                            <option value="level 2">Tase 2</option>
+                            <option value="level 3">Tase 3</option>
+                            <option value="level 4">Tase 4</option>
+                            <option value="level 5">Tase 5</option>
+                            <option value="level 6">Tase 6</option>
+                            <option value="level 7">Tase 7</option>
+                            <option value="level 8">Tase 8</option>
+                        </select>
+                    </div>
+                    <label for="guess">Sisesta number õiges vahemikus:</label>
+                    <input id="input" type="number" required/>
+                    <img class="arrow" src="assets/figure.png" alt="Arrow that shows the navigation">
+                </div>
+                <div class="second-input">
+                    <label for="guess">Arva number ära:</label>
+                    <input id="guess" type="number" required/>
+                </div>
+                <input id="extra-submit" class="submit-btn" type="submit" value="Salvesta"/>
+            </form>
+            <div class="guess-information">
+                <div class="high-guess">Pakutud number on genereeritud numbrist suurem</div>
+                <div class="low-guess">Pakutud number on genereeritud numbrist väiksem</div>
+                <div class="right-guess">Sa arvasid genereeritud numbri ära</div>
+                <div class="no-input">Palun täida kõik väljad</div>
+            </div>
+        </div>
+        <button class="result">Vajuta</button>
+        <audio id="audio1" src="sound-effect1.mp3"></audio>
+        <audio id="audio2" src="sound-effect2.mp3"></audio>
+        <audio id="audio3" src="sound-effect3.mp3"></audio>
+        <h2 class="text1" id="output1"></h2>
+        <h2 class="text2" id="output2"></h2>
+        <h1 class="text3" id="output3"></h1>
+        <a href="index.html"><input id="submit-btn2" class="submit-btn" type="submit" value="Tagasi"/></a>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
+</body>
+</html>
