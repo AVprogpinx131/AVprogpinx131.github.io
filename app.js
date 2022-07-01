@@ -1,4 +1,3 @@
-
 // Storing html elements 
 const myGuess = document.querySelector('#guess');
 const myInput = document.querySelector('#input');
@@ -23,12 +22,12 @@ const alert2 = document.querySelector('.alert2');
 const alert3 = document.querySelector('.alert3');
 const insBtn = document.querySelector('.ins-btn');
 
-
+// Initialising values for further use 
 let randomNumber;
 let guesses = 0;
 let points = 0;
 
-
+// Levels ranges
 let levelOne = (start, end) => {
     let ans = [];
     for (let i = start; i <= end; i++){
@@ -106,7 +105,7 @@ let hideElement = () => {
     alert3.style.display = 'none';
 }
 
-
+// Checking if player inputs the number from the correct level range
 let levels = () => {
     let first = levelOne(20, 29);
     let second = levelTwo(30, 39);
@@ -166,7 +165,7 @@ let levels = () => {
 
 levels();
 
-
+// Different events in the game 
 let gameEvents = () => {
     myInput.addEventListener('mouseout', () => {
         arrow.style.opacity = '1';
@@ -188,7 +187,7 @@ let gameEvents = () => {
 gameEvents();
 
 
-
+// Guessing loop, getting players input and showing information about the guess based on that
 let guessingNumber = () => {
     randomNumber = Math.floor(Math.random() * myInput.value);
     submit.addEventListener('click', () => {
@@ -228,7 +227,7 @@ let resultAndBackBtnView = () => {
     gamingBoard.style.opacity = '0';
 }
 
-
+// Players result information
 let gameEndInfo = () => {
     result.addEventListener('click', () => {
         result.style.display = 'none';
@@ -240,7 +239,7 @@ let gameEndInfo = () => {
     })
 }
 
-
+// Point system and sounds 
 let gameEndSoundsAndPoints = () => {
     if (guesses === 1 && options.value === 'level 1') {
         points += 10;
@@ -488,5 +487,6 @@ let gameEndSoundsAndPoints = () => {
     }
 }
 
+// Gsap for button animation
 gsap.fromTo('.result', {scale: 1}, {scale: 1.1, yoyo: true, repeat: -1, duration: 0.7})
 
