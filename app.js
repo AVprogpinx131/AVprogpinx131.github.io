@@ -16,6 +16,7 @@ const trueMasterSound = document.querySelector('#audio3');
 const text1 = document.querySelector('#output1');
 const text2 = document.querySelector('#output2');
 const text3 = document.querySelector('#output3');
+const timer = document.querySelector('#timer');
 const options = document.querySelector('#option');
 const alert1 = document.querySelector('.alert1');
 const alert2 = document.querySelector('.alert2');
@@ -210,6 +211,7 @@ let guessingNumber = () => {
             setTimeout(resultAndBackBtnView, 2000);
             gameEndInfo();
             gameEndSoundsAndPoints();
+            clearInterval(timerVar);
         }
     })
 }
@@ -227,6 +229,29 @@ let resultAndBackBtnView = () => {
     gamingBoard.style.opacity = '0';
 }
 
+
+// Counting players time 
+let countTimer = () => {
+    ++totalSeconds;
+    let hour = Math.floor(totalSeconds / 3600);
+    let minute = Math.floor((totalSeconds - hour * 3600) / 60);
+    let seconds = totalSeconds - (hour * 3600 + minute * 60);
+    if (hour < 10) {
+        hour = "0" + hour;
+    }
+    if (minute < 10) {
+        minute = "0" + minute;
+    }
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
+    timer.textContent = "Aeg: " + hour + ":" + minute + ":" + seconds;
+}
+
+let timerVar = setInterval(countTimer, 1000);
+let totalSeconds = 0;
+
+
 // Players result information
 let gameEndInfo = () => {
     result.addEventListener('click', () => {
@@ -235,6 +260,7 @@ let gameEndInfo = () => {
         text1.innerHTML = `Õige number oli tõesti ${myGuess.value}`;
         text2.innerHTML = `Pakkumisi kokku: ${guesses}`;
         text3.innerHTML = `Punkte kokku: ${points}`;
+        timer.style.display = 'block';
         hideElement();
     })
 }
