@@ -257,9 +257,9 @@ let gameEndInfo = () => {
     result.addEventListener('click', () => {
         result.style.display = 'none';
         backBtn.style.display = 'block';
-        text1.innerHTML = `Õige number oli tõesti ${myGuess.value}`;
-        text2.innerHTML = `Pakkumisi kokku: ${guesses}`;
-        text3.innerHTML = `Punkte kokku: ${points}`;
+        text1.textContent = `Õige number oli tõesti ${myGuess.value}`;
+        text2.textContent = `Pakkumisi kokku: ${guesses}`;
+        text3.textContent = `Punkte kokku: ${points}`;
         timer.style.display = 'block';
         hideElement();
     })
