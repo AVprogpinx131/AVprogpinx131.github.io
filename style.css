@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
 * {
     margin: 0;
@@ -26,14 +27,12 @@ body {
     border-radius: 50px;
 }
 
-.gaming-board {
-    padding: 1em;
-}
 
 .exp {
     font-size: 3.5rem;
     font-family: 'Indie Flower'; 
     margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .first-input {
@@ -44,6 +43,7 @@ body {
 #input {
     margin-left: 1em;
 }
+
 .options {
     margin-bottom: 2em;
 }
@@ -53,12 +53,25 @@ select {
     border: none;
     outline: none;
     font-family: 'Poppins';
-    font-size: 15px;
+    font-size: 17px;
     width: 150px;
     height: 60px;
-    padding-left: 1em;
+    padding-left: 1.5em; 
 }
 
+
+.rounds {
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(140, 47, 158);
+    width: 25%;
+    padding: .7em;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Russo One';
+}
 
 .second-input {
     margin-bottom: 3em;
@@ -76,7 +89,6 @@ input {
     height: 60px;
     font-family: 'Poppins';
 }
-
 
 #guess {
     margin-left: 7.3em;
@@ -106,22 +118,17 @@ input {
 
 .text1 {
     position: absolute;
+    font-size: 2.5rem;
     left: 50%;
     top: 45%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
 }
 
 .text2 {
     position: absolute;
+    font-size: 2.5rem;
     left: 50%;
-    top: 55%;
-    transform: translate(-50%, -50%);
-}
-
-.text3 {
-    position: absolute;
-    left: 50%;
-    top: 75%;
+    top: 65%;
     transform: translate(-50%, -50%);
 }
 
@@ -130,7 +137,7 @@ input {
     left: 50%;
     top: 25%;
     transform: translate(-50%, -50%);
-    font-size: 3rem;
+    font-size: 4rem;
     display: none;
 }
 
@@ -143,6 +150,7 @@ input {
     background-color: rgb(67, 219, 168);
     border: none;
     border-radius: 50px;
+    cursor: pointer;
 }
 
 #submit-btn2 {
