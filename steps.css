@@ -1,96 +1,96 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Questrial&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Questrial&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
-h1 {    
-    text-align: center;
-    margin-top: 2em;
+h1 {
+  text-align: center;
+  margin-top: 2em;
 }
 
 button {
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    border: none;
-    width: 135px;
-    height: 70px;
-    font-size: 16px;
-    font-family: 'Poppins';
-    border-radius: 50px;
-    background-color: rgb(67, 219, 168);
-    cursor: pointer;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  border: none;
+  width: 135px;
+  height: 70px;
+  font-size: 16px;
+  font-family: "Poppins";
+  border-radius: 50px;
+  background-color: rgb(67, 219, 168);
+  cursor: pointer;
 }
 
 button:hover {
-    transition: transform .5s;
-    transform: scale(1.08);
+  transition: transform 0.5s;
+  transform: scale(1.08);
 }
 
 .steps {
-    margin-top: 4em;
+  margin-top: 4em;
 }
 
 .step {
-    display: flex;
-} 
+  display: flex;
+}
 
 .box {
-    padding: 3em;
-    margin-right: 5em;
-    font-family: 'Questrial';
-    font-size: 25px;
-    background: url(textbox.svg);
-    background-repeat: no-repeat;
+  padding: 3em;
+  margin-right: 5em;
+  font-family: "Questrial";
+  font-size: 25px;
+  background: url(textbox.svg);
+  background-repeat: no-repeat;
 }
 
 p {
-    font-size: 17px;
+  font-size: 17px;
 }
 
 .text {
-    background-color: bisque;
-    margin: 2em;
-    padding: 3em;
-    border-radius: 50px;
+  background-color: bisque;
+  margin: 2em;
+  padding: 3em;
+  border-radius: 50px;
 }
 
 .text4 {
-    margin: 1.3em 2em;
+  margin: 1.3em 2em;
 }
 
 .fig {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 3vh;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3vh;
 }
 
 .desc {
-    margin-bottom: 1em;
-    margin-top: 5em;
-    font-size: 20px;
+  margin-bottom: 1em;
+  margin-top: 5em;
+  font-size: 20px;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: rgb(0, 0, 0);
-    margin-bottom: 2em;
-    color: white;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgb(0, 0, 0);
+  margin-bottom: 2em;
+  color: white;
 }
 
 th {
-    padding: 1em;
+  padding: 1em;
 }
 
 td {
-    padding-left: 2em;
-    padding-bottom: 1em;
+  padding-left: 2em;
+  padding-bottom: 1em;
 }
