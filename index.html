@@ -9,53 +9,53 @@
   </head>
   <body>
     <div class="container">
-      <a href="instructions.html"
-        ><button class="submit-btn ins-btn">Juhised</button></a
-      >
-      <div class="alerts">
-        <div class="alert1">Sisestasid õige taseme numbri</div>
-        <div class="alert2">Palun täida väljad</div>
-        <div class="alert3">
-          Sisestasid vale taseme numbri või numbri, mis ei kuulu õigesse<br />vahemiku
-          (20-99). Palun proovi uuesti
-        </div>
-      </div>
       <div class="gaming-board">
+        <a href="instructions.html"
+          ><button class="submit-btn ins-btn">Juhised</button></a
+        >
+        <div class="alerts">
+          <div class="alert1">Sisestasid õige taseme numbri</div>
+          <div class="alert2">Palun täida väljad</div>
+          <div class="alert3">
+            Sisestasid vale taseme numbri või numbri, mis ei kuulu õigesse<br />vahemiku
+            (20-99). Palun proovi uuesti
+          </div>
+        </div>
         <h1 class="exp">Selles mängus tuleb suvaline number ära arvata</h1>
         <div class="rounds"></div>
         <form action="#">
-          <div class="first-input">
-            <div class="options">
-              <label for="level">Vali tase:</label>
-              <select id="option">
-                <option value=""></option>
-                <option value="level 1">Tase 1</option>
-                <option value="level 2">Tase 2</option>
-                <option value="level 3">Tase 3</option>
-                <option value="level 4">Tase 4</option>
-                <option value="level 5">Tase 5</option>
-                <option value="level 6">Tase 6</option>
-                <option value="level 7">Tase 7</option>
-                <option value="level 8">Tase 8</option>
-              </select>
-            </div>
-            <label for="guess">Sisesta number õiges vahemikus:</label>
-            <input id="input" type="number" />
-            <img
-              class="arrow"
-              src="assets/figure.png"
-              alt="Arrow that shows the navigation"
-            />
+          <div>
+            <label for="level">Vali tase:</label>
           </div>
-          <div class="second-input">
-            <label for="guess">Arva number ära:</label>
-            <input id="guess" type="number" />
+          <select id="option">
+            <option value=""></option>
+            <option value="level 1">Tase 1</option>
+            <option value="level 2">Tase 2</option>
+            <option value="level 3">Tase 3</option>
+            <option value="level 4">Tase 4</option>
+            <option value="level 5">Tase 5</option>
+            <option value="level 6">Tase 6</option>
+            <option value="level 7">Tase 7</option>
+            <option value="level 8">Tase 8</option>
+          </select>
+          <div>
+            <label for="level">Sisesta number õiges vahemikus:</label>
           </div>
+          <input id="input" type="number" />
+          <img
+            class="arrow"
+            src="assets/figure.png"
+            alt="Arrow that shows the navigation"
+          />
+          <div>
+            <label for="level">Arva number ära:</label>
+          </div>
+          <input id="guess" type="number" />
           <input
-            id="extra-submit"
-            class="submit-btn"
             type="submit"
+            class="submit-btn"
             value="Salvesta"
+            id="extra-submit"
           />
         </form>
         <div class="guess-information">
