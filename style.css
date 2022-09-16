@@ -23,8 +23,11 @@ body {
   background: url(assets/abstract.png);
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 4em;
   border-radius: 50px;
+}
+
+.gaming-board {
+  margin: 5em;
 }
 
 .exp {
@@ -34,28 +37,8 @@ body {
   margin-bottom: 1em;
 }
 
-.first-input {
-  padding-top: 4em;
-  padding-bottom: 3em;
-}
-
-#input {
-  margin-left: 1em;
-}
-
 .options {
   margin-bottom: 2em;
-}
-
-select {
-  margin-left: 2em;
-  border: none;
-  outline: none;
-  font-family: "Poppins";
-  font-size: 17px;
-  width: 150px;
-  height: 60px;
-  padding-left: 1.5em;
 }
 
 .rounds {
@@ -71,32 +54,31 @@ select {
   font-family: "Russo One";
 }
 
-.second-input {
-  margin-bottom: 3em;
-}
-
 label {
   font-size: 20px;
 }
 
-input {
+input,
+select {
   text-align: center;
   font-size: 25px;
   outline: none;
   width: 160px;
   height: 60px;
   font-family: "Poppins";
+  margin: 1em 0 1em 0;
 }
 
-#guess {
-  margin-left: 7.3em;
+option,
+select {
+  font-size: 17px;
 }
 
 .arrow {
   position: absolute;
   transition: ease 0.5s;
   opacity: 0;
-  margin-left: -1em;
+  margin-top: 2em;
 }
 
 .result {
@@ -140,19 +122,22 @@ input {
 }
 
 .submit-btn {
-  font-size: 16px;
-  width: 135px;
-  height: 70px;
-  margin-left: 0;
+  display: block;
+  font-size: 15px;
+  width: 120px;
+  height: 65px;
   margin-top: 1em;
   background-color: rgb(67, 219, 168);
   border: none;
   border-radius: 50px;
   cursor: pointer;
+  font-family: "Poppins";
 }
 
 #submit-btn2 {
   display: none;
+  margin: 0 0 2em 2em;
+  cursor: pointer;
 }
 
 a {
@@ -166,6 +151,11 @@ a {
 
 .guess-information {
   margin-top: 2em;
+}
+
+.ins-btn {
+  float: right;
+  margin: 0.7em;
 }
 
 .high-guess,
@@ -207,9 +197,58 @@ a {
   background: rgb(171, 59, 59);
 }
 
-.ins-btn {
-  position: absolute;
-  right: 80px;
-  top: 15px;
-  font-family: "Poppins";
+@media screen and (max-width: 500px) {
+  .container {
+    background-image: none;
+  }
+  .gaming-board {
+    margin: -4em;
+    padding: 1em;
+  }
+  body {
+    background-image: url("assets/abstract.png");
+    height: 100vh;
+  }
+  .exp {
+    font-size: 2.3em;
+    margin-top: -2em;
+    padding-top: 1em;
+  }
+  .arrow,
+  .ins-btn {
+    display: none;
+  }
+  form {
+    padding-top: 3em;
+  }
+  label,
+  .high-guess,
+  .low-guess,
+  .right-guess,
+  .no-input {
+    font-size: 18px;
+  }
+  .high-guess,
+  .low-guess,
+  .right-guess,
+  .no-input {
+    font-size: 16px;
+  }
+
+  .rounds {
+    width: 60%;
+    top: 120px;
+    font-size: 1.2em;
+  }
+
+  .result {
+    font-size: 20px;
+    left: 65%;
+  }
+  .text1,
+  .text2,
+  #timer {
+    font-size: 1.5rem;
+    width: 100%;
+  }
 }
