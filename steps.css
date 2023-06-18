@@ -10,76 +10,65 @@ body {
   font-family: "Poppins";
 }
 
+nav {
+  padding: 1em 0 0 2em;
+}
+
+.game-instructions {
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.7em;
+  border-radius: 10px;
+  background-color: rgb(7, 202, 202);
+  color: white;
+}
+
+.game-instructions:hover {
+  background-color: rgb(7, 182, 182);
+}
+
 h1 {
   text-align: center;
-  margin-top: 2em;
+  padding: 2em 0 1em 0;
+  font-size: 1.7rem;
 }
 
-button {
-  position: absolute;
-  top: 50px;
-  left: 50px;
-  border: none;
-  width: 135px;
-  height: 70px;
-  font-size: 16px;
-  font-family: "Poppins";
-  border-radius: 50px;
-  background-color: rgb(67, 219, 168);
-  cursor: pointer;
+ul {
+  padding: 0 2em 2em 2em;
 }
 
-button:hover {
-  transition: transform 0.5s;
-  transform: scale(1.08);
-}
-
-.steps {
-  margin-top: 4em;
-}
-
-.step {
-  display: flex;
-}
-
-.box {
-  padding: 3em;
-  margin-right: 5em;
-  font-family: "Questrial";
-  font-size: 25px;
-  background: url(textbox.svg);
-  background-repeat: no-repeat;
-}
-
-p {
-  font-size: 17px;
-}
-
-.text {
-  background-color: bisque;
-  margin: 2em;
-  padding: 3em;
-  border-radius: 50px;
-}
-
-.text4 {
-  margin: 1.3em 2em;
+li {
+  padding-top: 1em;
 }
 
 .fig {
   display: flex;
-  justify-content: space-around;
-  margin-top: 3vh;
+  justify-content: center;
 }
 
-.desc {
-  margin-bottom: 1em;
-  margin-top: 5em;
-  font-size: 20px;
+p {
+  text-align: center;
+  padding: 2em 0;
+  font-size: 1.2rem;
+}
+
+img {
+  width: 600px;
+  height: 345px;
+  max-width: 100%;
+  height: auto;
+}
+
+.table {
+  width: 600px;
+  height: 345px;
+  table-layout: fixed;
+  width: 100%;
+  height: auto;
 }
 
 table {
-  width: 100%;
   border-collapse: collapse;
   background-color: rgb(0, 0, 0);
   margin-bottom: 2em;
