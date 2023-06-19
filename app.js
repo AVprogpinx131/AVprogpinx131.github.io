@@ -2,27 +2,23 @@
 
 const myGuess = document.querySelector("#guess");
 const myInput = document.querySelector("#input");
-const arrow = document.querySelector(".arrow");
-const submit = document.querySelector("#extra-submit");
+const submit = document.querySelector("#submit");
 const high = document.querySelector(".high-guess");
 const low = document.querySelector(".low-guess");
 const right = document.querySelector(".right-guess");
 const emptyField = document.querySelector(".no-input");
-const gamingBoard = document.querySelector(".gaming-board");
+const gamingBoard = document.querySelector(".game-board");
 const result = document.querySelector(".result");
-const backBtn = document.querySelector("#submit-btn2");
 const victorySound = document.querySelector("#audio1");
 const failureSound = document.querySelector("#audio2");
 const trueMasterSound = document.querySelector("#audio3");
-const text2 = document.querySelector("#output1");
-const text3 = document.querySelector("#output2");
+const userGuesses = document.querySelector("#guesses");
+const userPoints = document.querySelector("#points");
 const rounds = document.querySelector(".rounds");
 const timer = document.querySelector("#timer");
 const options = document.querySelector("#option");
-const alert1 = document.querySelector(".alert1");
-const alert2 = document.querySelector(".alert2");
-const alert3 = document.querySelector(".alert3");
-const insBtn = document.querySelector(".ins-btn");
+const userResults = document.querySelector(".final-data");
+
 
 // Initialising variables
 
@@ -31,6 +27,7 @@ let guesses = 0;
 let points = 0;
 let attempt = 1;
 let txt = "";
+
 
 // Creating arrays for different levels
 
@@ -98,74 +95,16 @@ let levelEight = (start, end) => {
   return ans;
 };
 
-let hideElement = () => {
-  alert1.style.display = "none";
-  alert2.style.display = "none";
-  alert3.style.display = "none";
-};
-
-// Checking if players entered number corresponds to the level, notifying the player with a message about the input
-
-let levels = () => {
-  let first = levelOne(20, 29);
-  let second = levelTwo(30, 39);
-  let third = levelThree(40, 49);
-  let four = levelFour(50, 59);
-  let fife = levelFife(60, 69);
-  let six = levelSix(70, 79);
-  let seven = levelSeven(80, 89);
-  let eight = levelEight(90, 99);
-
-  myInput.addEventListener("mouseout", () => {
-    let input = parseInt(myInput.value);
-    if (options.value === "level 1" && first.includes(input)) {
-      alert1.style.display = "block";
-      setTimeout(hideElement, 2000);
-    } else if (options.value === "level 2" && second.includes(input)) {
-      alert1.style.display = "block";
-      setTimeout(hideElement, 2000);
-    } else if (options.value === "level 3" && third.includes(input)) {
-      alert1.style.display = "block";
-      setTimeout(hideElement, 2000);
-    } else if (options.value === "level 4" && four.includes(input)) {
-      alert1.style.display = "block";
-      setTimeout(hideElement, 2000);
-    } else if (options.value === "level 5" && fife.includes(input)) {
-      alert1.style.display = "block";
-      setTimeout(hideElement, 2000);
-    } else if (options.value === "level 6" && six.includes(input)) {
-      setTimeout(hideElement, 2000);
-    } else if (options.value === "level 7" && seven.includes(input)) {
-      alert1.style.display = "block";
-      setTimeout(hideElement, 2000);
-    } else if (options.value === "level 8" && eight.includes(input)) {
-      alert1.style.display = "block";
-      setTimeout(hideElement, 2000);
-    } else {
-      if (options.value === "" || myInput.value === "") {
-        alert2.style.display = "block";
-        setTimeout(hideElement, 3000);
-      } else {
-        alert3.style.display = "block";
-        setTimeout(hideElement, 4000);
-      }
-    }
-  });
-};
-
-levels();
 
 // Other events in the game
 
 let gameEvents = () => {
   myInput.addEventListener("mouseout", () => {
-    arrow.style.opacity = "1";
     randomNumber = Math.floor(Math.random() * myInput.value);
     // console.log(randomNumber);
   });
 
   myInput.addEventListener("mouseover", () => {
-    arrow.style.opacity = "0";
     emptyField.style.opacity = "0";
   });
 
@@ -193,6 +132,7 @@ let inputField = () => {
 
 gameRounds();
 
+
 // Guessing loop, ending the game if the player has completed 5 rounds, stopping the timer
 
 let guessingNumber = () => {
@@ -211,7 +151,6 @@ let guessingNumber = () => {
       if (attempt < 6) {
         right.style.opacity = "1";
         emptyField.style.opacity = "0";
-        insBtn.style.opacity = "0";
         setTimeout(inputField, 1000);
         setTimeout(gameRounds, 2000);
       } else {
@@ -229,14 +168,11 @@ let guessingNumber = () => {
 
 guessingNumber();
 
-insBtn.addEventListener("click", () => {
-  emptyField.style.opacity = "0";
-});
-
 let resultAndBackBtnView = () => {
   result.style.display = "block";
-  gamingBoard.style.opacity = "0";
+  gamingBoard.style.display = "none";
 };
+
 
 // Creating a timer
 
@@ -260,17 +196,21 @@ let countTimer = () => {
 let timerVar = setInterval(countTimer, 1000);
 let totalSeconds = 0;
 
+
 // Showing players final time, total guesses and points
 
 let gameEndInfo = () => {
   result.addEventListener("click", () => {
     result.style.display = "none";
-    backBtn.style.display = "block";
-    text2.textContent = `Pakkumisi kokku: ${guesses}`;
-    text3.textContent = `Punkte kokku: ${points}`;
+    userGuesses.textContent = `Pakkumisi kokku: ${guesses}`;
+    userPoints.textContent = `Punkte kokku: ${points}`;
+    userGuesses.style.display = "block";
+    userPoints.style.display = "block";
     timer.style.display = "block";
+    userResults.style.display = "flex";
   });
 };
+
 
 // Point system and sounds
 

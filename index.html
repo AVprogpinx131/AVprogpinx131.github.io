@@ -8,89 +8,73 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="gaming-board">
-        <a href="instructions.html"
-          ><button class="submit-btn ins-btn">Juhised</button></a
-        >
-        <div class="alerts">
-          <div class="alert1">Sisestasid õige taseme numbri</div>
-          <div class="alert2">Palun täida väljad</div>
-          <div class="alert3">
-            Sisestasid vale taseme numbri või numbri, mis ei kuulu õigesse<br />vahemiku
-            (20-99). Palun proovi uuesti
-          </div>
-        </div>
-        <h1 class="exp">Selles mängus tuleb suvaline number ära arvata</h1>
+    <nav>
+      <a href="instructions.html">
+        <button class="game-instructions">Juhised</button>
+      </a>
+    </nav>
+    <h1 class="game-title">Arva ära suvaline number</h1>
+    <div class="game-rounds-container">
+      <div>
         <div class="rounds"></div>
-        <form action="#">
-          <div>
-            <label for="level">Vali tase:</label>
-          </div>
-          <select id="option">
-            <option value=""></option>
-            <option value="level 1">Tase 1</option>
-            <option value="level 2">Tase 2</option>
-            <option value="level 3">Tase 3</option>
-            <option value="level 4">Tase 4</option>
-            <option value="level 5">Tase 5</option>
-            <option value="level 6">Tase 6</option>
-            <option value="level 7">Tase 7</option>
-            <option value="level 8">Tase 8</option>
-          </select>
-          <div>
-            <label for="level">Sisesta number õiges vahemikus:</label>
-          </div>
-          <input id="input" type="number" />
-          <img
-            class="arrow"
-            src="assets/figure.png"
-            alt="Arrow that shows the navigation"
-          />
-          <div>
-            <label for="level">Arva number ära:</label>
-          </div>
-          <input id="guess" type="number" />
-          <input
-            type="submit"
-            class="submit-btn"
-            value="Salvesta"
-            id="extra-submit"
-          />
-        </form>
-        <div class="guess-information">
-          <div class="high-guess">
-            Pakutud number on genereeritud numbrist suurem
-          </div>
-          <div class="low-guess">
-            Pakutud number on genereeritud numbrist väiksem
-          </div>
-          <div class="right-guess">Sa arvasid genereeritud numbri ära</div>
-          <div class="no-input">Palun täida kõik väljad</div>
+      </div>
+    </div>
+    <div class="final-data">
+      <div class="text-container">
+        <h2 id="timer"></h2>
+        <h2 id="guesses"></h2>
+        <h2 id="points"></h2>
+        <a href="index.html">
+          <button class="game-instructions">Tagasi</button>
+        </a>
+      </div>
+    </div>
+    <div class="game-board">
+      <div class="game-information">
+        <div>
+          <div class="high-guess">Paku väiksem number</div>
+          <div class="low-guess">Paku suurem number</div>
+          <div class="right-guess">Arvasid numbri ära</div>
+          <div class="no-input">Täida kõik väljad</div>
         </div>
       </div>
-      <button class="result">Vajuta</button>
-      <audio id="audio1" src="sound-effect1.mp3"></audio>
-      <audio id="audio2" src="sound-effect2.mp3"></audio>
-      <audio id="audio3" src="sound-effect3.mp3"></audio>
-      <h1 class="text1" id="output1"></h1>
-      <h1 id="timer"></h1>
-      <h1 class="text2" id="output2"></h1>
-      <a href="index.html"
-        ><input
-          class="submit-btn"
-          id="submit-btn2"
-          type="submit"
-          value="Tagasi"
-      /></a>
+      <div class="game-elements">
+        <div>
+          <label for="level">Vali tase:</label>
+        </div>
+        <select id="option">
+          <option value=""></option>
+          <option value="level 1">Tase 1</option>
+          <option value="level 2">Tase 2</option>
+          <option value="level 3">Tase 3</option>
+          <option value="level 4">Tase 4</option>
+          <option value="level 5">Tase 5</option>
+          <option value="level 6">Tase 6</option>
+          <option value="level 7">Tase 7</option>
+          <option value="level 8">Tase 8</option>
+        </select>
+        <div>
+          <label for="level">Sisesta number õiges vahemikus:</label>
+        </div>
+        <div class="figure-container">
+          <input id="input" type="number" />
+        </div>
+        <div>
+          <label for="level">Arva number ära:</label>
+        </div>
+        <div>
+          <input id="guess" type="number" />
+        </div>
+        <button class="game-instructions guess-result" id="submit">
+          Salvesta
+        </button>
+      </div>
     </div>
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
-      integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script type="text/javascript" src="app.js"></script>
+    <button class="game-instructions result">Vajuta</button>
+    <audio id="audio1" src="sound-effect1.mp3"></audio>
+    <audio id="audio2" src="sound-effect2.mp3"></audio>
+    <audio id="audio3" src="sound-effect3.mp3"></audio>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
