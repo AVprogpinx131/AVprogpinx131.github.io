@@ -9,8 +9,13 @@
   </head>
   <body>
     <nav>
+      <div class="alerts">
+        <div class="alert1">Õige taseme number</div>
+        <div class="alert2">Täida väljad</div>
+        <div class="alert3">Vale taseme number</div>
+      </div>
       <a href="instructions.html">
-        <button class="game-instructions">Juhised</button>
+        <button class="game-instructions" id="ins-btn">Juhised</button>
       </a>
     </nav>
     <h1 class="game-title">Arva ära suvaline number</h1>
@@ -56,7 +61,7 @@
         <div>
           <label for="level">Sisesta number õiges vahemikus:</label>
         </div>
-        <div class="figure-container">
+        <div>
           <input id="input" type="number" />
         </div>
         <div>

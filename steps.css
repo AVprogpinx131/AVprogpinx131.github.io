@@ -10,6 +10,8 @@ body {
   font-family: "Poppins";
 }
 
+/* Navbar */
+
 nav {
   padding: 1em 0 0 2em;
 }
@@ -28,6 +30,8 @@ nav {
   background-color: rgb(7, 182, 182);
 }
 
+/* Game description */
+
 h1 {
   text-align: center;
   padding: 2em 0 1em 0;
@@ -41,6 +45,8 @@ ul {
 li {
   padding-top: 1em;
 }
+
+/* Game descriptive figures */
 
 .fig {
   display: flex;

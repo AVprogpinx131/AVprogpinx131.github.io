@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 
 * {
   margin: 0;
@@ -17,10 +16,35 @@ body {
   height: 100vh;
 }
 
+/* Navbar */
+
 nav {
   display: flex;
-  justify-content: end;
-  padding: 1em 2em 0 0;
+  justify-content: space-between;
+  padding: 1.5em 2em 1.5em 0;
+  position: relative;
+}
+
+.alerts {
+  display: flex;
+}
+
+.alert1,
+.alert2,
+.alert3 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(5, 179, 5);
+  padding: 1em;
+  border-radius: 10px;
+  display: none;
+}
+
+.alert2,
+.alert3 {
+  background-color: red;
 }
 
 .game-instructions {
@@ -36,6 +60,8 @@ nav {
 .game-instructions:hover {
   background-color: rgb(7, 182, 182);
 }
+
+/* Game heading, rounds */
 
 .game-title {
   font-family: "Indie Flower";
@@ -58,6 +84,8 @@ nav {
   padding: 1em 2em;
   font-size: large;
 }
+
+/* Gaming board elements */
 
 .game-board {
   background-color: #1220a3;
@@ -114,6 +142,8 @@ label {
   margin-top: 1em;
 }
 
+/* User result elements, text */
+
 .final-data {
   display: flex;
   justify-content: center;
@@ -124,7 +154,8 @@ label {
   display: none;
 }
 
-#guesses, #points {
+#guesses,
+#points {
   padding-top: 2em;
 }
 
@@ -152,6 +183,8 @@ h2 {
   display: none;
 }
 
+/* Finishing touches */
+
 @media (max-width: 520px) {
   .game-title {
     font-size: 2rem;
@@ -160,10 +193,16 @@ h2 {
     padding: 1em 1.5em;
     font-size: medium;
   }
+  .alert1,
+  .alert2,
+  .alert3 {
+    font-size: 14px;
+    left: 30%;
+  }
 }
 
 @media (max-width: 390px) {
   .game-title {
-    padding: 1em .5em 0 .5em;
+    padding: 1em 0.5em 0 0.5em;
   }
 }
